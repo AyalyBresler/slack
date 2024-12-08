@@ -39,5 +39,3 @@ def connections_to_slack():
         print('succeeded!')
     except Exception as error:
         raise error
-
-connections_to_slack()
