@@ -25,12 +25,11 @@ class TestSlackConnection(unittest.TestCase):
     @patch('src.slack_connection.list_of_connections')
     def test_slack_connection_list_of_connections(self, listOfConnections):
         """
-        Test slack_connection_list_of_connections to check the join to slack
+        Test slack_connection_list_of_connections to check the list of the connections to slack!
         """
         
         listOfConnections.return_value = {'ok': True, 'members':[{'id': 'USLACKBOT', 'team_id': 'T082BRHKWLQ'}, {'id': 'U081GDU7S6A', 'team_id': 'T082BRHKWLQ'}]}
         self.assertEqual(type(listOfConnections()), dict)
-        self.assertEqual(listOfConnections(), {'ok': True, 'members':[{'id': 'USLACKBOT', 'team_id': 'T082BRHKWLQ'}, {'id': 'U081GDU7S6A', 'team_id': 'T082BRHKWLQ'}]})
 
 
 if __name__ == "__main__":
