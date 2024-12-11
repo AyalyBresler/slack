@@ -10,23 +10,23 @@ def join_to_channel(client, channelId = '#connection'):
         client.conversations_join(channel=channelId)
         return True
 
-    except Exception as error:
-        raise error
+    except Exception:
+        raise Exception('Can not connect to slack with the channel Id.')
 
 def create_a_channel(client, name):
     try:
         client.conversations_create(name=name, is_private=False)
         return True
     
-    except Exception as error:
-        raise error
+    except Exception:
+        raise Exception('Can not connect to slack to create a channel.')
 
 def list_of_connections(client):
     try:
         return client.users_list()
 
-    except Exception as error:
-        raise error
+    except Exception:
+        raise Exception('Can not return the list of connections to slack.')
 
 def connections_to_slack():
     try:
@@ -37,5 +37,5 @@ def connections_to_slack():
         list_of_connection_to_slack.append(list_of_connections(client))
         print(list_of_connections(client))
         print('succeeded!')
-    except Exception as error:
-        raise error
+    except Exception:
+        raise Exception('Can not connect to slack.')
