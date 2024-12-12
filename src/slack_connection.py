@@ -15,7 +15,7 @@ def join_to_channel(client, channelId = '#connection'):
 
 def create_a_channel(client, name):
     try:
-        client.conversations_create(name=name, is_private=False)
+        client.conversations_create(name=name)
         return True
     
     except Exception:
