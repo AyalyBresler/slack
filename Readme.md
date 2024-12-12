@@ -9,8 +9,8 @@ for example:
 To run this program in the docker:
 
 ```cmd
-docker build -t <name> .
-docker run -p 5000:5000 -it <name>
+docker build -t <CONTAINER_NAME> .
+docker run -p 5000:5000 -it <CONTAINER_NAME>
 ``` 
 
 then create list that:
